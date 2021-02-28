@@ -19,3 +19,7 @@ export const addMsg = (sender, question) => {
 export const clearInput = () => {
     elements.questionHolder.value = "";
 };
+
+export const initChat = () => {
+    elements.globalChat.innerHTML = localStorage.getItem('chat');
+}

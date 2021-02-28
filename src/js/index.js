@@ -32,10 +32,10 @@ const questionController = async () => {
 
         //Create a new question Object
         state.msg = new Question(question);
-        
+        await state.msg.getAnswer();
         try{
             // 4) Process msg
-            await state.msg.getAnswer();
+            
             
 
             // 5) Render results
@@ -48,5 +48,11 @@ const questionController = async () => {
 
          //Stop writting text...
          //clearWriting();
+         localStorage.setItem('chat', document.querySelector('.chat__list').innerHTML);
     }
 };
+
+const init = () => {
+    questionView.initChat();
+};
+init();
